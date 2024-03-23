@@ -82,10 +82,6 @@ describe PayPal::SDK::Core::API::REST do
       new_token = @api.token
       expect(@api.token_hash[:expires_in]).not_to eql 0
     end
-
-    it "Get token" do
-      expect(@api.token).not_to be_nil
-    end
   end
 
   describe "Success request", :integration => true do

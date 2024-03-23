@@ -150,6 +150,9 @@ module PayPal::SDK::Core
               "developer_msg" => response } }
           end
         payload
+      rescue MultiJson::ParseError
+        payload[:data] = ""
+        payload
       end
 
       def flat_hash(h)
