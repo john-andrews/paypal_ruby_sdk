@@ -32,10 +32,10 @@ module PayPal::SDK::Core
         end
       end
 
-      # Default ca file
-      def default_ca_file
-        File.expand_path("../../../../../data/paypal.crt", __FILE__)
-      end
+      # Default ca file - Commented out to use the local CA instead, this CA causes "self-signed certificate" errors
+      # def default_ca_file
+      #  File.expand_path("../../../../../data/paypal.crt", __FILE__)
+      # end
 
       # Apply ssl configuration to http object
       def configure_ssl(http)
